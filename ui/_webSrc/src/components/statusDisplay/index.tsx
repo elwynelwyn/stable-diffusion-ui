@@ -35,7 +35,7 @@ export default function StatusDisplay() {
     }
  
     else if (status === 'success') {
-      if(data[0] === 'ok') {
+      if(data[0] === 'OK') {
         setStatusMessage(successMessage);
         setStatusClass('success');
       }

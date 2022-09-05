@@ -4,18 +4,15 @@ import { useQuery } from '@tanstack/react-query';
 import './App.css';
 
 import StatusDisplay from './components/statusDisplay';
+import CreationPanel from './components/creationPanel';
 
-const loadModifications = async () => {
-  const response = await fetch('/modifiers.json')
-  const data = await response.text();
-  return data;
-}
+
 function App() {
 
   console.log("APP RENDER");
   // doing this here for the time being, to show the data getting loaded
   // but this will be moved to the image modification panel when it is created
-  const modifications = useQuery(['modifications'], loadModifications);
+  // const modifications = useQuery(['modifications'], loadModifications);
   // useEffect(() => {
   //   console.log('modification data', modifications.data);
   // }, [modifications]);
@@ -27,7 +24,8 @@ function App() {
         <h1>Stable Diffusion UI v2.1.0</h1>
         <StatusDisplay></StatusDisplay>
       </header>
-      <nav className="Create">
+      <nav className="create-layout">
+        <CreationPanel></CreationPanel>
       </nav>
       <main className="Display">
       </main>
