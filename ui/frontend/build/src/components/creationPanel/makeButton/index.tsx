@@ -20,19 +20,15 @@ export default function MakeButton() {
 
   const makeImage = async () => {
     console.log("makeImage");
-    debugger;
     setCachedOptions(imageOptions);
     refetch();
   };
 
   useEffect(() => {
-    console.log('MakeButton: status', status);
-    console.log('MakeButton: data', data);
     // query is done
     if(status === 'success') {
       // check to make sure that the image was created
       if(data.status === 'succeeded') {
-        debugger
         data.output.forEach((image) => {
           addNewImage(image.data,imageOptions);
         });
