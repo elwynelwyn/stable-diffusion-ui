@@ -1,5 +1,6 @@
 import create from 'zustand';
-import produce from 'immer'
+import produce from 'immer';
+import { devtools } from 'zustand/middleware'
 
 export type imageOptions = {
   prompt: string;
@@ -25,7 +26,9 @@ interface ImageCreateState {
   setPrompt: (prompt: string) => void
 }
 
-export const useImageCreate = create<ImageCreateState>((set) => ({
+// devtools breaks TS
+// @ts-ignore
+export const useImageCreate = create<ImageCreateState>(devtools((set) => ({
   imageOptions: {
     prompt: 'a photograph of an astronaut riding a horse',
     imgSrc: '',
@@ -51,6 +54,6 @@ export const useImageCreate = create<ImageCreateState>((set) => ({
     }))
   },
 
-}))
+})))
 
 

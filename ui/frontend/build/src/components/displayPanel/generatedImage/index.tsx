@@ -1,9 +1,10 @@
 import React from "react";
 
-export default function GeneratedImage() {
+export default function GeneratedImage({imageData}) {
   return (
     <div className="generated-image">
-      <h1>Generated Image</h1>
+      <p>Your image</p>
+      <img src={imageData.display} alt="generated" />
     </div>
   );
 };
