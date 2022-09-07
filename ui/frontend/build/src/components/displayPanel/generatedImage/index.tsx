@@ -4,7 +4,7 @@ export default function GeneratedImage({imageData}) {
   return (
     <div className="generated-image">
       <p>Your image</p>
-      <img src={imageData.display} alt="generated" />
+      <img src={imageData} alt="generated" />
     </div>
   );
 };

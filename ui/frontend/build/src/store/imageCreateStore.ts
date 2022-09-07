@@ -3,6 +3,7 @@ import produce from 'immer';
 import { devtools } from 'zustand/middleware'
 
 export type imageOptions = {
+  // id: number;
   prompt: string;
   imgSrc: string;
   seed: number;
